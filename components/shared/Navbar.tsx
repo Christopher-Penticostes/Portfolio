@@ -38,7 +38,7 @@ export function NavbarMain() {
         <NavbarLogo />
         <NavItems items={navItems} />
         <div className="flex items-center gap-4">
-          <NavbarButton variant="primary">Book a call</NavbarButton>
+          <NavbarButton variant="primary">View CV</NavbarButton>
         </div>
       </NavBody>
 
@@ -72,7 +72,7 @@ export function NavbarMain() {
               variant="primary"
               className="w-full"
             >
-              Book a call
+              View CV
             </NavbarButton>
           </div>
         </MobileNavMenu>
