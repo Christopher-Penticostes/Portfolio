@@ -17,7 +17,7 @@ export function NavbarMain() {
   const navItems = [
     {
       name: 'Home',
-      link: '#features',
+      link: '/',
     },
     {
       name: 'Projects',

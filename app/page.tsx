@@ -3,12 +3,13 @@
 import { cn } from '@/lib/utils';
 import { Spotlight } from '@/components/ui/spotlight';
 import Hero from '@/components/sections/hero';
-import { Skills } from '@/components/sections/skillsCard';
+import { EncryptedText } from '@/components/ui/encrypted-text';
+import { BentoGridSecondDemo } from '@/components/sections/profile';
 
 export default function Home() {
   return (
     <div>
-      <div className="relative flex h-screen w-full overflow-hidden bg-black/96 antialiased md:items-center md:justify-center">
+      <div className="relative flex w-full overflow-hidden bg-black/96 antialiased md:items-center md:justify-center">
         <div
           className={cn(
             'pointer-events-none absolute inset-0 bg-size-[80px_80px] select-none',
@@ -23,8 +24,16 @@ export default function Home() {
 
         <Hero />
       </div>
-      <div className="bg-black/96">
-        <Skills />
+      <div className="bg-black/96 py-24">
+        <p className="mx-auto max-w-lg pb-14 text-center text-6xl font-bold">
+          <EncryptedText
+            text="About Me"
+            encryptedClassName="text-green-400"
+            revealedClassName="dark:text-white text-transparent bg-linear-to-b from-neutral-50 to-neutral-400 bg-clip-text"
+            revealDelayMs={150}
+          />
+        </p>
+        <BentoGridSecondDemo />
       </div>
     </div>
   );

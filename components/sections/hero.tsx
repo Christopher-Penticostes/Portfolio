@@ -28,8 +28,8 @@ export default function Hero() {
   ];
 
   return (
-    <div className="w-full flex items-center max-w-7xl px-4 pt-15 max-lg:flex-col-reverse max-lg:pt-0 max-md:pb-20">
-      <div className="relative z-10 mx-auto w-[70%] p-4 pt-20 md:pt-0 max-lg:w-full max-md:pt-0">
+    <div className="w-full flex items-center max-w-7xl px-4 pt-15 max-lg:flex-col-reverse max-lg:pt-25 max-md:pb-20">
+      <div className="relative z-10 mx-auto w-[70%] pt-20 md:pt-0 max-lg:w-full max-md:pt-0">
         <h1 className="bg-opacity-50 text-left bg-linear-to-b from-neutral-50 to-neutral-400 bg-clip-text text-8xl font-bold text-transparent md:text-10xl max-lg:text-7xl max-lg:text-center max-md:text-5xl">
           <span className="text-[30px] font-medium max-lg:text-[26px] max-md:text-[20px]">
             Hello! I'm
@@ -48,13 +48,13 @@ export default function Hero() {
           <button className="cursor-pointer px-4 py-3 border-2 border-white bg-transparent text-white text-xl rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 max-md:px-3 max-md:py-0">
             <FaFacebookF size={20} className="max-md:h-4 max-md:w-4" />
           </button>
-          <button className="cursor-pointer px-4 py-3 border border-white bg-transparent text-white text-xl rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 max-md:px-3 max-md:py-0">
+          <button className="cursor-pointer px-4 py-3 border-2 border-white bg-transparent text-white text-xl rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 max-md:px-3 max-md:py-0">
             <FaLinkedinIn size={20} className="max-md:h-4 max-md:w-4" />
           </button>
-          <button className="cursor-pointer px-4 py-3 border border-white bg-transparent text-white text-xl rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 max-md:px-3 max-md:py-0">
+          <button className="cursor-pointer px-4 py-3 border-2 border-white bg-transparent text-white text-xl rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 max-md:px-3 max-md:py-0">
             <FaGithub size={20} className="max-md:h-4 max-md:w-4" />
           </button>
-          <button className="cursor-pointer px-4 py-3 border border-white bg-transparent text-white text-xl rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 max-md:px-3 max-md:py-0">
+          <button className="cursor-pointer px-4 py-3 border-2 border-white bg-transparent text-white text-xl rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 max-md:px-3 max-md:py-0">
             <BiLogoGmail size={20} className="max-md:h-4 max-md:w-4" />
           </button>
         </div>

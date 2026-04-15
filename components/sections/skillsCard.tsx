@@ -6,7 +6,19 @@ export function Skills() {
   return (
     <div className="py-15 rounded-md flex flex-col antialiased dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
       <InfiniteMovingCards
-        items={testimonials}
+        items={skills1}
+        direction="right"
+        speed="fast"
+        pauseOnHover={false}
+      />
+      <InfiniteMovingCards
+        items={skills1}
+        direction="left"
+        speed="fast"
+        pauseOnHover={false}
+      />
+      <InfiniteMovingCards
+        items={skills1}
         direction="right"
         speed="fast"
         pauseOnHover={false}
@@ -15,7 +27,7 @@ export function Skills() {
   );
 }
 
-const testimonials = [
+const skills1 = [
   {
     quote:
       'It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.',
