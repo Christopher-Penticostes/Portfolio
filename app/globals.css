@@ -152,3 +152,7 @@
 @utility animate-spotlight {
   animation: var(--animate-spotlight);
 }
+
+@utility animate-scroll {
+  animation: var(--animate-scroll);
+}

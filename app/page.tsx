@@ -17,8 +17,8 @@ export default function Home() {
         />
 
         <Spotlight
-          className="-top-40 left-0 md:-top-20 md:left-60"
-          fill="white"
+          className="-top-40 left-0 md:-top-10 md:left-80 max-lg:top-10! max-lg:left-10!"
+          fill="green"
         />
 
         <Hero />

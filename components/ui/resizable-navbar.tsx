@@ -52,10 +52,7 @@ interface MobileNavMenuProps {
 
 export const Navbar = ({ children, className }: NavbarProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const { scrollY } = useScroll({
-    target: ref,
-    offset: ['start start', 'end start'],
-  });
+  const { scrollY } = useScroll();
   const [visible, setVisible] = useState<boolean>(false);
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
@@ -230,9 +227,9 @@ export const MobileNavToggle = ({
   onClick: () => void;
 }) => {
   return isOpen ? (
-    <IconX className="text-white dark:text-white" onClick={onClick} />
+    <IconX className="text-white dark:text-white mr-1" onClick={onClick} />
   ) : (
-    <IconMenu2 className="text-white dark:text-white" onClick={onClick} />
+    <IconMenu2 className="text-white dark:text-white mr-1" onClick={onClick} />
   );
 };
 
