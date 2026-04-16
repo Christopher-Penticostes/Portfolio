@@ -25,7 +25,7 @@ export default function Home() {
         <Hero />
       </div>
       <div className="bg-black/96 py-24">
-        <p className="mx-auto max-w-lg pb-14 text-center text-6xl font-bold">
+        <p className="mx-auto max-w-lg pb-14 text-center text-6xl font-bold max-lg:text-4xl">
           <EncryptedText
             text="About Me"
             encryptedClassName="text-green-400"

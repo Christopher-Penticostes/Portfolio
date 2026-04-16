@@ -17,7 +17,7 @@ export function BentoGridSecondDemo() {
   };
 
   return (
-    <BentoGrid className="max-w-7xl px-4 mx-auto md:auto-rows-[20rem]">
+    <BentoGrid className="max-w-7xl px-4 mx-auto lg:auto-rows-[20rem]">
       {items({ copied, handleCopyEmail }).map((item, i) => (
         <BentoGridItem
           key={i}
@@ -49,25 +49,27 @@ const items = ({
       </>
     ),
     className:
-      'md:col-span-2 text-3xl/10 flex justify-end bg-[url("/images/bg1.jpg")] bg-size-[auto_450px] bg-position-[center_left_12rem]',
+      'lg:col-span-2 text-3xl/10 flex justify-end bg-[url("/images/bg1.jpg")] bg-size-[auto_450px] bg-position-[center_left_12rem] max-lg:text-2xl/8',
   },
   {
     title: (
       <>
         <span className="font-medium text-gray-400">My Primary Tech Stack</span>
         <br />
-        <span className="font-bold text-3xl/11">
+        <span className="font-bold text-3xl/11 max-lg:text-2xl/8">
           PHP, NEXT
           <br /> MySQL, PostgreSQL
         </span>
       </>
     ),
-    className: 'md:col-start-3 bg-[url("/images/bg2.jpg")] bg-cover bg-top',
+    className: 'lg:col-start-3 bg-[url("/images/bg2.jpg")] bg-cover bg-top',
   },
   {
     title: (
       <div className="flex flex-col items-center justify-center">
-        <p className="text-3xl mb-8 text-center">Do you want to hire me?</p>
+        <p className="text-3xl mb-8 text-center max-lg:text-2xl/8">
+          Do you want to hire me?
+        </p>
         <div className="flex justify-center">
           <NoiseBackground
             containerClassName="w-fit p-[5px] rounded-md mx-auto"
@@ -88,13 +90,13 @@ const items = ({
       </div>
     ),
     className:
-      'md:col-start-1 md:row-start-2 bg-[url("/images/bg3.jpg")] bg-cover bg-top flex justify-center',
+      'lg:col-start-1 lg:row-start-2 bg-[url("/images/bg3.jpg")] bg-cover bg-top flex justify-center',
   },
   {
     title: (
       <>
         <p className="font-medium text-gray-400">College</p>
-        <div className="text-3xl/10">
+        <div className="text-3xl/10 max-lg:text-2xl/8">
           <p>Cavite State University - Imus Campus</p>
         </div>
         <p className="mt-5 mb-5 text-lg/6 font-semibold text-transparent bg-linear-to-b from-neutral-50 to-neutral-400 bg-clip-text">
@@ -108,7 +110,7 @@ const items = ({
         </p>
 
         <p className="font-medium text-gray-400 mt-10">Senior High School</p>
-        <div className="text-3xl/10">
+        <div className="text-3xl/10 max-lg:text-2xl/8">
           <p>STI College Bacoor</p>
         </div>
         <p className="mt-5 mb-5 text-lg/6 font-semibold text-transparent bg-linear-to-b from-neutral-50 to-neutral-400 bg-clip-text">
@@ -123,7 +125,7 @@ const items = ({
       </>
     ),
     className:
-      'md:row-span-2 md:col-start-1 md:row-start-3 bg-[url("/images/bg2.jpg")] bg-cover bg-top',
+      'lg:row-span-2 lg:col-start-1 lg:row-start-3 bg-[url("/images/bg2.jpg")] bg-cover bg-top',
     icon: <IconSchool className="h-4 w-4 text-neutral-500" />,
   },
   {
@@ -135,6 +137,6 @@ const items = ({
       </div>
     ),
     className:
-      'md:col-span-2 md:row-span-3 md:col-start-2 md:row-start-2 relative overflow-hidden',
+      'lg:col-span-2 lg:row-span-3 lg:col-start-2 lg:row-start-2 relative overflow-hidden',
   },
 ];
