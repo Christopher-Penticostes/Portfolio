@@ -15,7 +15,7 @@ export default function Skills() {
   return (
     <div className="mt-4">
       <p className="text-md font-medium text-gray-400">Languages</p>
-      <div className="mt-2 grid grid-cols-3 gap-x-9 gap-y-4">
+      <div className="mt-2 grid grid-cols-3 gap-x-9 gap-y-4 max-md:grid-cols-2">
         <div>
           <div className="flex items-center justify-between">
             <p className="text-sm font-bold text-white">HTML</p>
@@ -139,7 +139,7 @@ export default function Skills() {
       <p className="text-md font-medium text-gray-400 mt-8">
         Frameworks & Runtimes
       </p>
-      <div className="mt-2 grid grid-cols-3 gap-x-9 gap-y-4">
+      <div className="mt-2 grid grid-cols-3 gap-x-9 gap-y-4 max-md:grid-cols-2">
         <div>
           <div className="flex items-center justify-between">
             <p className="text-sm font-bold text-white">React.js</p>
@@ -237,7 +237,7 @@ export default function Skills() {
       <p className="text-md font-medium text-gray-400 mt-8">
         Packages & Libraries
       </p>
-      <div className="mt-2 grid grid-cols-3 gap-x-9 gap-y-4">
+      <div className="mt-2 grid grid-cols-3 gap-x-9 gap-y-4 max-md:grid-cols-2">
         <div>
           <div className="flex items-center justify-between">
             <p className="text-sm font-bold text-white">Prisma ORM</p>
@@ -283,7 +283,7 @@ export default function Skills() {
       <p className="text-md font-medium text-gray-400 mt-8">
         Components Libraries
       </p>
-      <div className="mt-2 grid grid-cols-3 gap-x-9 gap-y-4">
+      <div className="mt-2 grid grid-cols-3 gap-x-9 gap-y-4 max-md:grid-cols-2">
         <div>
           <div className="flex items-center justify-between">
             <p className="text-sm font-bold text-white">Shadcn UI</p>
@@ -314,7 +314,7 @@ export default function Skills() {
 
       {/* Databases */}
       <p className="text-md font-medium text-gray-400 mt-8">Databases</p>
-      <div className="mt-2 grid grid-cols-3 gap-x-9 gap-y-4">
+      <div className="mt-2 grid grid-cols-3 gap-x-9 gap-y-4 max-md:grid-cols-2">
         <div>
           <div className="flex items-center justify-between">
             <p className="text-sm font-bold text-white">MySQL</p>
@@ -360,7 +360,7 @@ export default function Skills() {
       <p className="text-md font-medium text-gray-400 mt-8">
         Dev Tools & Platforms
       </p>
-      <div className="mt-2 grid grid-cols-3 gap-x-9 gap-y-4">
+      <div className="mt-2 grid grid-cols-3 gap-x-9 gap-y-4 max-md:grid-cols-2">
         <div>
           <div className="flex items-center justify-between">
             <p className="text-sm font-bold text-white">Git</p>
