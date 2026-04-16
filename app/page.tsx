@@ -6,6 +6,7 @@ import Hero from '@/components/sections/hero';
 import { EncryptedText } from '@/components/ui/encrypted-text';
 import { Profile } from '@/components/sections/profile';
 import { Experience } from '@/components/sections/experience';
+import { Certifications } from '@/components/sections/certifications';
 
 export default function Home() {
   return (
@@ -36,7 +37,7 @@ export default function Home() {
         </p>
         <Profile />
       </div>
-      <div className="bg-black/96 pt-10 pb-24">
+      <div className="bg-black/96 pb-24">
         <p className="mx-auto max-w-lg pb-14 text-center text-6xl font-bold max-lg:text-4xl">
           <EncryptedText
             text="My Experience"
@@ -46,6 +47,17 @@ export default function Home() {
           />
         </p>
         <Experience />
+      </div>
+      <div className="bg-black/96 pb-24">
+        <p className="mx-auto max-w-7xl pb-14 text-center text-6xl font-bold max-lg:text-4xl">
+          <EncryptedText
+            text="Awards & Certifications"
+            encryptedClassName="text-green-400"
+            revealedClassName="dark:text-white text-transparent bg-linear-to-b from-neutral-50 to-neutral-400 bg-clip-text"
+            revealDelayMs={150}
+          />
+        </p>
+        <Certifications />
       </div>
     </div>
   );
