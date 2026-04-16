@@ -8,7 +8,7 @@ import { NoiseBackground } from '@/components/ui/noise-background';
 import { Stars } from '../ui/stars';
 import Skills from './skills';
 
-export function BentoGridSecondDemo() {
+export function Profile() {
   const [copied, setCopied] = useState(false);
 
   const handleCopyEmail = () => {

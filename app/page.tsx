@@ -4,7 +4,8 @@ import { cn } from '@/lib/utils';
 import { Spotlight } from '@/components/ui/spotlight';
 import Hero from '@/components/sections/hero';
 import { EncryptedText } from '@/components/ui/encrypted-text';
-import { BentoGridSecondDemo } from '@/components/sections/profile';
+import { Profile } from '@/components/sections/profile';
+import { Experience } from '@/components/sections/experience';
 
 export default function Home() {
   return (
@@ -33,7 +34,18 @@ export default function Home() {
             revealDelayMs={150}
           />
         </p>
-        <BentoGridSecondDemo />
+        <Profile />
+      </div>
+      <div className="bg-black/96 pt-10 pb-24">
+        <p className="mx-auto max-w-lg pb-14 text-center text-6xl font-bold max-lg:text-4xl">
+          <EncryptedText
+            text="My Experience"
+            encryptedClassName="text-green-400"
+            revealedClassName="dark:text-white text-transparent bg-linear-to-b from-neutral-50 to-neutral-400 bg-clip-text"
+            revealDelayMs={150}
+          />
+        </p>
+        <Experience />
       </div>
     </div>
   );
