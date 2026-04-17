@@ -1,7 +1,7 @@
 import { AnimatedTestimonials } from '@/components/ui/animated-testimonials';
 
 export function Certifications() {
-  const testimonials = [
+  const certificate = [
     {
       quote:
         'Completed The Git & GitHub Bootcamp, gaining practical experience in version control, branching strategies, and collaborative development using Git and GitHub. Demonstrated the ability to manage code efficiently, track changes, and work effectively within team-based workflows.',
@@ -17,5 +17,5 @@ export function Certifications() {
       src: '/images/cert2.jpg',
     },
   ];
-  return <AnimatedTestimonials testimonials={testimonials} autoplay={true} />;
+  return <AnimatedTestimonials testimonials={certificate} autoplay={true} />;
 }

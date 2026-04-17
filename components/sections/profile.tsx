@@ -1,7 +1,6 @@
 'use client';
 
-import { cn } from '@/lib/utils';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { BentoGrid, BentoGridItem } from '../ui/bento-grid';
 import { IconCopy, IconSchool, IconCheck } from '@tabler/icons-react';
 import { NoiseBackground } from '@/components/ui/noise-background';

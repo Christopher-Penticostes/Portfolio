@@ -32,8 +32,8 @@ export default function Hero() {
       <div className="relative z-10 mx-auto w-[70%] pt-20 md:pt-0 max-lg:w-full max-md:pt-0">
         <h1 className="bg-opacity-50 text-left bg-linear-to-b from-neutral-50 to-neutral-400 bg-clip-text text-8xl font-bold text-transparent md:text-10xl max-lg:text-7xl max-lg:text-center max-md:text-5xl">
           <span className="text-[30px] font-medium max-lg:text-[26px] max-md:text-[20px]">
-            Hello! I'm
-          </span>{' '}
+            Hello! I&apos;m
+          </span>
           <br />
           Christopher <br /> Penticostes
         </h1>

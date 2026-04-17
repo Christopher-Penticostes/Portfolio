@@ -43,7 +43,7 @@ export default function Home() {
             text="My Experience"
             encryptedClassName="text-green-400"
             revealedClassName="dark:text-white text-transparent bg-linear-to-b from-neutral-50 to-neutral-400 bg-clip-text"
-            revealDelayMs={150}
+            revealDelayMs={50}
           />
         </p>
         <Experience />
@@ -54,7 +54,7 @@ export default function Home() {
             text="Awards & Certifications"
             encryptedClassName="text-green-400"
             revealedClassName="dark:text-white text-transparent bg-linear-to-b from-neutral-50 to-neutral-400 bg-clip-text"
-            revealDelayMs={150}
+            revealDelayMs={50}
           />
         </p>
         <Certifications />

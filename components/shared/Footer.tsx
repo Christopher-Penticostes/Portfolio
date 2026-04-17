@@ -50,7 +50,7 @@ export function Footer() {
             <FlipWords words={words} />
           </div>
           <p className="text-transparent bg-linear-to-b from-neutral-50 to-neutral-400 bg-clip-text font-medium text-[120px]/34 max-lg:text-8xl max-md:text-[45px] max-md:text-center max-md:ml-0 -ml-1 uppercase">
-            Let's Connect
+            Let&apos;s Connect
           </p>
         </div>
         <div className="relative z-10 mt-10 flex items-center justify-between max-md:flex-col max-md:gap-4">

@@ -11,6 +11,7 @@ import {
 import Logo from '@/public/images/logo.png';
 
 import React, { useRef, useState } from 'react';
+import Link from 'next/link';
 
 interface NavbarProps {
   children: React.ReactNode;
@@ -123,7 +124,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
       )}
     >
       {items.map((item, idx) => (
-        <a
+        <Link
           onMouseEnter={() => setHovered(idx)}
           onClick={onItemClick}
           className={cn(
@@ -142,7 +143,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
             />
           )}
           <span className="relative z-20">{item.name}</span>
-        </a>
+        </Link>
       ))}
     </motion.div>
   );
@@ -235,7 +236,7 @@ export const MobileNavToggle = ({
 
 export const NavbarLogo = () => {
   return (
-    <a
+    <Link
       href="/"
       className="relative z-20 mr-4 flex items-center space-x-2 py-1 text-sm font-normal text-black"
     >
@@ -249,7 +250,7 @@ export const NavbarLogo = () => {
       <span className="font-medium text-lg text-white dark:text-white">
         Christopher .
       </span>
-    </a>
+    </Link>
   );
 };
 

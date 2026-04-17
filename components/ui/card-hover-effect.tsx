@@ -1,6 +1,5 @@
 import { cn } from '@/lib/utils';
 import { AnimatePresence, motion } from 'motion/react';
-
 import { useState } from 'react';
 
 export const HoverEffect = ({
@@ -14,20 +13,21 @@ export const HoverEffect = ({
   }[];
   className?: string;
 }) => {
-  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <div className={cn('grid grid-cols-1 lg:grid-cols-2', className)}>
       {items.map((item, idx) => (
         <a
-          className="relative group  block p-2 h-full w-full"
+          key={idx}
+          className="relative group block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full bg-white/15 dark:bg-slate-800/[0.8] block  rounded-3xl"
+                className="absolute inset-0 h-full w-full bg-white/15 dark:bg-slate-800/[0.8] block rounded-3xl"
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{

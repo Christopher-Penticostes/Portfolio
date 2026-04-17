@@ -2,8 +2,8 @@
 
 import { IconArrowLeft, IconArrowRight } from '@tabler/icons-react';
 import { motion, AnimatePresence } from 'motion/react';
-
-import { useEffect, useState } from 'react';
+import Image from 'next/image';
+import { useCallback, useEffect, useState } from 'react';
 
 type Testimonial = {
   quote: string;
@@ -11,6 +11,7 @@ type Testimonial = {
   designation: string;
   src: string;
 };
+
 export const AnimatedTestimonials = ({
   testimonials,
   autoplay = false,
@@ -20,28 +21,28 @@ export const AnimatedTestimonials = ({
 }) => {
   const [active, setActive] = useState(0);
 
-  const handleNext = () => {
+  // Pre-compute random rotations once — initialized lazily outside render cycle
+  const [rotations] = useState<number[]>(() =>
+    testimonials.map(() => Math.floor(Math.random() * 21) - 10),
+  );
+
+  const handleNext = useCallback(() => {
     setActive((prev) => (prev + 1) % testimonials.length);
-  };
+  }, [testimonials.length]);
 
-  const handlePrev = () => {
+  const handlePrev = useCallback(() => {
     setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
+  }, [testimonials.length]);
 
-  const isActive = (index: number) => {
-    return index === active;
-  };
+  const isActive = (index: number) => index === active;
 
   useEffect(() => {
     if (autoplay) {
       const interval = setInterval(handleNext, 5000);
       return () => clearInterval(interval);
     }
-  }, [autoplay]);
+  }, [autoplay, handleNext]);
 
-  const randomRotateY = () => {
-    return Math.floor(Math.random() * 21) - 10;
-  };
   return (
     <div className="mx-auto max-w-7xl px-4 py-16 font-sans antialiased md:px-8 lg:px-12 max-md:pt-4">
       <div className="relative grid grid-cols-1 gap-20 lg:grid-cols-2 max-lg:gap-10">
@@ -55,13 +56,13 @@ export const AnimatedTestimonials = ({
                     opacity: 0,
                     scale: 0.9,
                     z: -100,
-                    rotate: randomRotateY(),
+                    rotate: rotations[index],
                   }}
                   animate={{
                     opacity: isActive(index) ? 1 : 0.7,
                     scale: isActive(index) ? 1 : 0.95,
                     z: isActive(index) ? 0 : -100,
-                    rotate: isActive(index) ? 0 : randomRotateY(),
+                    rotate: isActive(index) ? 0 : rotations[index],
                     zIndex: isActive(index)
                       ? 40
                       : testimonials.length + 2 - index,
@@ -71,7 +72,7 @@ export const AnimatedTestimonials = ({
                     opacity: 0,
                     scale: 0.9,
                     z: 100,
-                    rotate: randomRotateY(),
+                    rotate: rotations[index],
                   }}
                   transition={{
                     duration: 0.4,
@@ -79,7 +80,7 @@ export const AnimatedTestimonials = ({
                   }}
                   className="absolute w-full mx-auto origin-bottom flex justify-center"
                 >
-                  <img
+                  <Image
                     src={testimonial.src}
                     alt={testimonial.name}
                     width={600}
@@ -95,22 +96,10 @@ export const AnimatedTestimonials = ({
         <div className="flex flex-col justify-between py-4">
           <motion.div
             key={active}
-            initial={{
-              y: 20,
-              opacity: 0,
-            }}
-            animate={{
-              y: 0,
-              opacity: 1,
-            }}
-            exit={{
-              y: -20,
-              opacity: 0,
-            }}
-            transition={{
-              duration: 0.2,
-              ease: 'easeInOut',
-            }}
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -20, opacity: 0 }}
+            transition={{ duration: 0.2, ease: 'easeInOut' }}
           >
             <h3 className="text-3xl font-bold text-white dark:text-white">
               {testimonials[active].name}
@@ -122,16 +111,8 @@ export const AnimatedTestimonials = ({
               {testimonials[active].quote.split(' ').map((word, index) => (
                 <motion.span
                   key={index}
-                  initial={{
-                    filter: 'blur(10px)',
-                    opacity: 0,
-                    y: 5,
-                  }}
-                  animate={{
-                    filter: 'blur(0px)',
-                    opacity: 1,
-                    y: 0,
-                  }}
+                  initial={{ filter: 'blur(10px)', opacity: 0, y: 5 }}
+                  animate={{ filter: 'blur(0px)', opacity: 1, y: 0 }}
                   transition={{
                     duration: 0.2,
                     ease: 'easeInOut',

@@ -1,7 +1,18 @@
 'use client';
 import { cn } from '@/lib/utils';
 import { motion } from 'motion/react';
-import React, { useMemo } from 'react';
+import React from 'react';
+
+const generateStars = (number: number) =>
+  new Array(number).fill(null).map((_, idx) => ({
+    id: idx,
+    top: Math.random() * 100 + '%',
+    left: Math.random() * 100 + '%',
+    size: Math.random() * 2 + 1,
+    opacity: Math.random() * 0.6 + 0.2,
+    delay: Math.random() * 4,
+    duration: Math.random() * 3 + 2,
+  }));
 
 export const Stars = ({
   number = 80,
@@ -10,19 +21,7 @@ export const Stars = ({
   number?: number;
   className?: string;
 }) => {
-  const stars = useMemo(
-    () =>
-      new Array(number).fill(true).map((_, idx) => ({
-        id: idx,
-        top: Math.random() * 100 + '%',
-        left: Math.random() * 100 + '%',
-        size: Math.random() * 2 + 1, // between 1px and 3px
-        opacity: Math.random() * 0.6 + 0.2, // between 0.2 and 0.8
-        delay: Math.random() * 4 + 's',
-        duration: Math.random() * 3 + 2 + 's',
-      })),
-    [number],
-  );
+  const stars = generateStars(number);
 
   return (
     <>
@@ -36,10 +35,10 @@ export const Stars = ({
             width: star.size + 'px',
             height: star.size + 'px',
           }}
-          animate={{ opacity: [star.opacity, 0.1, star.opacity] }} // twinkle effect
+          animate={{ opacity: [star.opacity, 0.1, star.opacity] }}
           transition={{
-            duration: parseFloat(star.duration),
-            delay: parseFloat(star.delay),
+            duration: star.duration,
+            delay: star.delay,
             repeat: Infinity,
             ease: 'easeInOut',
           }}
