@@ -34,7 +34,7 @@ export const AnimatedTestimonials = ({
 
   useEffect(() => {
     if (autoplay) {
-      const interval = setInterval(handleNext, 10000);
+      const interval = setInterval(handleNext, 5000);
       return () => clearInterval(interval);
     }
   }, [autoplay]);
@@ -77,7 +77,7 @@ export const AnimatedTestimonials = ({
                     duration: 0.4,
                     ease: 'easeInOut',
                   }}
-                  className="absolute inset-0 origin-bottom flex justify-center"
+                  className="absolute w-full mx-auto origin-bottom flex justify-center"
                 >
                   <img
                     src={testimonial.src}

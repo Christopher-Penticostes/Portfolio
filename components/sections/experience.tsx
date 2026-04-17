@@ -11,9 +11,9 @@ export const projects = [
   {
     title: (
       <div>
-        <p className="text-2xl pt-4">AP Creative Advertising Corp.</p>
+        <p className="text-2xl pt-4">Full Stack Developer</p>
         <p className="text-xl font-medium text-transparent bg-linear-to-b from-neutral-50 to-neutral-400 bg-clip-text">
-          Full Stack Developer
+          AP Creative Advertising Corp.
         </p>
       </div>
     ),
@@ -46,9 +46,9 @@ export const projects = [
   {
     title: (
       <div>
-        <p className="text-2xl pt-4">Wellness PRO Inc.</p>
+        <p className="text-2xl pt-4">Web Developer Intern</p>
         <p className="text-xl font-medium text-transparent bg-linear-to-b from-neutral-50 to-neutral-400 bg-clip-text">
-          Web Developer Intern
+          Wellness PRO Inc.
         </p>
       </div>
     ),

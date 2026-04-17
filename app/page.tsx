@@ -48,7 +48,7 @@ export default function Home() {
         </p>
         <Experience />
       </div>
-      <div className="bg-black/96 pb-24">
+      <div className="bg-black/96 pb-24 overflow-x-hidden max-md:pb-10">
         <p className="mx-auto max-w-7xl pb-14 text-center text-6xl font-bold max-lg:text-4xl">
           <EncryptedText
             text="Awards & Certifications"
