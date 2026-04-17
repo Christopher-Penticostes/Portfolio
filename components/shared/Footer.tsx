@@ -1,4 +1,7 @@
+'use client';
+
 import { FlipWords } from '@/components/ui/flip-words';
+import { IconArrowUpDashed } from '@tabler/icons-react';
 
 export function Footer() {
   const words = [
@@ -31,10 +34,18 @@ export function Footer() {
           <p className="text-xs">
             © 2026 Christopher Penticostes. All rights reserved.
           </p>
-          <div className="max-lg:hidden">Back to top</div>
+          <div
+            className="max-md:hidden flex items-center gap-4 hover:-translate-y-1 transition duration-400 cursor-pointer"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
+            <p className="text-sm">Back to top</p>
+            <button className="cursor-pointer p-2 text-black uppercase bg-white rounded-full transform  max-md:px-4 max-md:py-3">
+              <IconArrowUpDashed size={20} />
+            </button>
+          </div>
         </div>
         <div className="relative z-10 my-20 max-md:my-10">
-          <div className="text-2xl mx-auto font-medium text-gray-400 max-md:text-center max-md:text-lg">
+          <div className="text-2xl mx-auto font-medium text-gray-300 max-md:text-center max-md:text-lg">
             Want to build something
             <FlipWords words={words} />
           </div>
