@@ -51,23 +51,40 @@ export const EncryptedText: React.FC<EncryptedTextProps> = ({
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true });
 
-  // All render-needed values live in a single state object
+  // isMounted flips only on client — server always renders plain text
+  const isMountedRef = useRef(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  // No Math.random() in initial state — empty array matches server output exactly
   const [animState, setAnimState] = useState<AnimationState>({
     revealCount: 0,
-    scrambleChars: text
-      ? generateGibberishPreservingSpaces(text, charset).split('')
-      : [],
+    scrambleChars: [],
   });
 
-  // Internal animation refs — never read during render
   const animationFrameRef = useRef<number | null>(null);
   const startTimeRef = useRef<number>(0);
   const lastFlipTimeRef = useRef<number>(0);
 
   useEffect(() => {
-    if (!isInView) return;
+    isMountedRef.current = true;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setIsMounted(true);
+  }, []);
 
-    // Initialise timing refs only — no setState here
+  // Seed scramble chars whenever text/charset change (client only)
+  useEffect(() => {
+    if (!isMountedRef.current) return;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setAnimState({
+      revealCount: 0,
+      scrambleChars: generateGibberishPreservingSpaces(text, charset).split(''),
+    });
+  }, [text, charset]);
+
+  // Run animation once in view and mounted
+  useEffect(() => {
+    if (!isInView || !isMounted) return;
+
     startTimeRef.current = performance.now();
     lastFlipTimeRef.current = startTimeRef.current;
 
@@ -86,7 +103,6 @@ export const EncryptedText: React.FC<EncryptedTextProps> = ({
       const timeSinceLastFlip = now - lastFlipTimeRef.current;
       const shouldFlip = timeSinceLastFlip >= Math.max(0, flipDelayMs);
 
-      // setState inside rAF callback is not "directly in an effect"
       setAnimState((prev) => {
         const nextChars = shouldFlip
           ? prev.scrambleChars.map((ch, index) => {
@@ -115,9 +131,27 @@ export const EncryptedText: React.FC<EncryptedTextProps> = ({
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [isInView, text, revealDelayMs, charset, flipDelayMs]);
+  }, [isInView, isMounted, text, revealDelayMs, charset, flipDelayMs]);
 
   if (!text) return null;
+
+  // Before hydration: render plain text so server and client match exactly
+  if (!isMounted) {
+    return (
+      <motion.span
+        ref={ref}
+        className={cn(className)}
+        aria-label={text}
+        role="text"
+      >
+        {text.split('').map((char, index) => (
+          <span key={index} className={cn(revealedClassName)}>
+            {char}
+          </span>
+        ))}
+      </motion.span>
+    );
+  }
 
   return (
     <motion.span
@@ -132,8 +166,7 @@ export const EncryptedText: React.FC<EncryptedTextProps> = ({
           ? char
           : char === ' '
             ? ' '
-            : (animState.scrambleChars[index] ??
-              generateRandomCharacter(charset));
+            : (animState.scrambleChars[index] ?? char);
 
         return (
           <span

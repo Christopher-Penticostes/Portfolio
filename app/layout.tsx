@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: 'Porfolio | Christopher Penticostes',
-  description: 'Portfolio ',
+  description: 'Built with Next.js & Aceternity UI',
 };
 
 export default function RootLayout({

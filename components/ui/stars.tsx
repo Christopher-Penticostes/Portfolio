@@ -1,7 +1,7 @@
 'use client';
 import { cn } from '@/lib/utils';
 import { motion } from 'motion/react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const generateStars = (number: number) =>
   new Array(number).fill(null).map((_, idx) => ({
@@ -21,7 +21,14 @@ export const Stars = ({
   number?: number;
   className?: string;
 }) => {
-  const stars = generateStars(number);
+  const [stars, setStars] = useState<ReturnType<typeof generateStars>>([]);
+
+  useEffect(() => {
+    setStars(generateStars(number));
+  }, [number]);
+
+  // Render nothing until client has mounted — matches the server's empty output
+  if (stars.length === 0) return null;
 
   return (
     <>

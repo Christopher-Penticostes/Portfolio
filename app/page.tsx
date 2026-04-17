@@ -51,7 +51,7 @@ export default function Home() {
       <div className="bg-black/96 pb-24 overflow-x-hidden max-md:pb-10">
         <p className="mx-auto max-w-7xl pb-14 text-center text-6xl font-bold max-lg:text-4xl">
           <EncryptedText
-            text="Awards & Certifications"
+            text="Certifications"
             encryptedClassName="text-green-400"
             revealedClassName="dark:text-white text-transparent bg-linear-to-b from-neutral-50 to-neutral-400 bg-clip-text"
             revealDelayMs={50}

@@ -3,7 +3,7 @@
 import { IconArrowLeft, IconArrowRight } from '@tabler/icons-react';
 import { motion, AnimatePresence } from 'motion/react';
 import Image from 'next/image';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 type Testimonial = {
   quote: string;
@@ -20,11 +20,20 @@ export const AnimatedTestimonials = ({
   autoplay?: boolean;
 }) => {
   const [active, setActive] = useState(0);
+  const [isMounted, setIsMounted] = useState(false);
 
-  // Pre-compute random rotations once — initialized lazily outside render cycle
-  const [rotations] = useState<number[]>(() =>
-    testimonials.map(() => Math.floor(Math.random() * 21) - 10),
-  );
+  // Store rotations in a ref — avoids setState in effect, no extra re-render
+  const rotationsRef = useRef<number[]>(testimonials.map(() => 0));
+
+  useEffect(() => {
+    // Runs only on client after hydration — safe to use Math.random() here
+    rotationsRef.current = testimonials.map(
+      () => Math.floor(Math.random() * 21) - 10,
+    );
+    setIsMounted(true);
+    // Only needs to run once on mount; testimonials is stable
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleNext = useCallback(() => {
     setActive((prev) => (prev + 1) % testimonials.length);
@@ -48,49 +57,51 @@ export const AnimatedTestimonials = ({
       <div className="relative grid grid-cols-1 gap-20 lg:grid-cols-2 max-lg:gap-10">
         <div>
           <div className="relative h-100 w-full max-md:h-55">
-            <AnimatePresence>
-              {testimonials.map((testimonial, index) => (
-                <motion.div
-                  key={testimonial.src}
-                  initial={{
-                    opacity: 0,
-                    scale: 0.9,
-                    z: -100,
-                    rotate: rotations[index],
-                  }}
-                  animate={{
-                    opacity: isActive(index) ? 1 : 0.7,
-                    scale: isActive(index) ? 1 : 0.95,
-                    z: isActive(index) ? 0 : -100,
-                    rotate: isActive(index) ? 0 : rotations[index],
-                    zIndex: isActive(index)
-                      ? 40
-                      : testimonials.length + 2 - index,
-                    y: isActive(index) ? [0, -80, 0] : 0,
-                  }}
-                  exit={{
-                    opacity: 0,
-                    scale: 0.9,
-                    z: 100,
-                    rotate: rotations[index],
-                  }}
-                  transition={{
-                    duration: 0.4,
-                    ease: 'easeInOut',
-                  }}
-                  className="absolute w-full mx-auto origin-bottom flex justify-center"
-                >
-                  <Image
-                    src={testimonial.src}
-                    alt={testimonial.name}
-                    width={600}
-                    height={600}
-                    draggable={false}
-                    className="h-100 w-150 rounded-3xl object-cover object-center max-lg:h-90 max-lg:w-125 max-md:h-50 max-md:w-70"
-                  />
-                </motion.div>
-              ))}
-            </AnimatePresence>
+            {isMounted && (
+              <AnimatePresence>
+                {testimonials.map((testimonial, index) => (
+                  <motion.div
+                    key={testimonial.src}
+                    initial={{
+                      opacity: 0,
+                      scale: 0.9,
+                      z: -100,
+                      rotate: rotationsRef.current[index],
+                    }}
+                    animate={{
+                      opacity: isActive(index) ? 1 : 0.7,
+                      scale: isActive(index) ? 1 : 0.95,
+                      z: isActive(index) ? 0 : -100,
+                      rotate: isActive(index) ? 0 : rotationsRef.current[index],
+                      zIndex: isActive(index)
+                        ? 40
+                        : testimonials.length + 2 - index,
+                      y: isActive(index) ? [0, -80, 0] : 0,
+                    }}
+                    exit={{
+                      opacity: 0,
+                      scale: 0.9,
+                      z: 100,
+                      rotate: rotationsRef.current[index],
+                    }}
+                    transition={{
+                      duration: 0.4,
+                      ease: 'easeInOut',
+                    }}
+                    className="absolute w-full mx-auto origin-bottom flex justify-center"
+                  >
+                    <Image
+                      src={testimonial.src}
+                      alt={testimonial.name}
+                      width={600}
+                      height={600}
+                      draggable={false}
+                      className="h-100 w-150 rounded-3xl object-cover object-center max-lg:h-90 max-lg:w-125 max-md:h-50 max-md:w-70"
+                    />
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            )}
           </div>
         </div>
         <div className="flex flex-col justify-between py-4">
