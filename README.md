@@ -8,11 +8,11 @@ Welcome to the repository of my personal portfolio website, built with **Next.js
 
 ## 🧑‍💻 About Me
 
-I'm a passionate developer based in [Your Location] who loves building clean, performant, and visually stunning web applications. I enjoy turning ideas into reality through code and design.
+I'm a passionate developer based in Philippines who loves building clean, performant, and visually stunning web applications. I enjoy turning ideas into reality through code and design.
 
 In this website, you can view some of my background, education, skills, experience, projects, and ways to get in touch with me.
 
-🌐 **Visit my portfolio:** [yourportfolio.vercel.app](https://yourportfolio.vercel.app)
+🌐 **Visit my portfolio:** [https://crpdev.vercel.app/](https://crpdev.vercel.app/)
 
 ---
 
@@ -31,10 +31,10 @@ To run this project locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/your-portfolio-repo.git
+git clone https://github.com/Christopher-Penticostes/Portfolio.git
 
 # Navigate to the project directory
-cd your-portfolio-repo
+cd portfolio
 
 # Install dependencies
 npm install
@@ -61,4 +61,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-<p align="center">Made with ❤️ by <a href="https://yourportfolio.vercel.app">[Your Name]</a></p>
+<p align="center">Made with ❤️ by <a href="https://crpdev.vercel.app/">Christopher Penticostes</a></p>
