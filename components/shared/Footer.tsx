@@ -2,6 +2,7 @@
 
 import { FlipWords } from '@/components/ui/flip-words';
 import { IconArrowUpDashed } from '@tabler/icons-react';
+import Link from 'next/link';
 
 export function Footer() {
   const words = [
@@ -55,15 +56,27 @@ export function Footer() {
         </div>
         <div className="relative z-10 mt-10 flex items-center justify-between max-md:flex-col max-md:gap-4">
           <div className="flex gap-4">
-            <button className="cursor-pointer px-8 py-3 text-xs text-white uppercase border-2 border-white bg-transparent rounded-full transform hover:-translate-y-1 transition duration-400 max-md:px-4 max-md:py-3">
+            <Link
+              href="https://www.facebook.com/christopher.penticostes"
+              target="_blank"
+              className="cursor-pointer px-8 py-3 text-xs text-white uppercase border-2 border-white bg-transparent rounded-full transform hover:-translate-y-1 transition duration-400 max-md:px-4 max-md:py-3"
+            >
               Facebook
-            </button>
-            <button className="cursor-pointer px-8 py-3 text-xs text-white uppercase border-2 border-white bg-transparent rounded-full transform hover:-translate-y-1 transition duration-400 max-md:px-4 max-md:py-3">
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/christopher-penticostes-6ba49634a/"
+              target="_blank"
+              className="cursor-pointer px-8 py-3 text-xs text-white uppercase border-2 border-white bg-transparent rounded-full transform hover:-translate-y-1 transition duration-400 max-md:px-4 max-md:py-3"
+            >
               LinkedIn
-            </button>
-            <button className="cursor-pointer px-8 py-3 text-xs text-white uppercase border-2 border-white bg-transparent rounded-full transform hover:-translate-y-1 transition duration-400 max-md:px-4 max-md:py-3">
+            </Link>
+            <Link
+              href="https://github.com/Christopher-Penticostes"
+              target="_blank"
+              className="cursor-pointer px-8 py-3 text-xs text-white uppercase border-2 border-white bg-transparent rounded-full transform hover:-translate-y-1 transition duration-400 max-md:px-4 max-md:py-3"
+            >
               Github
-            </button>
+            </Link>
           </div>
           <p className="text-white text-sm">
             Built with Next.js & Aceternity UI

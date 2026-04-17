@@ -6,6 +6,7 @@ import MyPic from '@/public/images/MyPic.png';
 import { FaFacebookF, FaLinkedinIn, FaGithub } from 'react-icons/fa';
 import Image from 'next/image';
 import { BiLogoGmail } from 'react-icons/bi';
+import Link from 'next/link';
 
 export default function Hero() {
   const words = [
@@ -42,21 +43,42 @@ export default function Hero() {
           className="mt-5 text-left max-lg:text-center"
         />
         <div className="mt-15 flex gap-4 max-lg:justify-center max-md:mt-5">
-          <button className="cursor-pointer px-8 py-3 bg-white text-black text-xl rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 max-md:text-sm max-md:px-4">
+          <Link
+            href="files/Christopher-Penticostes_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cursor-pointer px-8 py-3 bg-white text-black text-xl rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 max-md:text-sm max-md:px-4"
+          >
             View CV
-          </button>
-          <button className="cursor-pointer px-4 py-3 border-2 border-white bg-transparent text-white text-xl rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 max-md:px-3 max-md:py-0">
+          </Link>
+          <Link
+            href="https://www.facebook.com/christopher.penticostes"
+            target="_blank"
+            className="flex items-center justify-center cursor-pointer px-4 py-3 border-2 border-white bg-transparent text-white text-xl rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 max-md:px-3 max-md:py-0"
+          >
             <FaFacebookF size={20} className="max-md:h-4 max-md:w-4" />
-          </button>
-          <button className="cursor-pointer px-4 py-3 border-2 border-white bg-transparent text-white text-xl rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 max-md:px-3 max-md:py-0">
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/christopher-penticostes-6ba49634a/"
+            target="_blank"
+            className="flex items-center justify-center cursor-pointer px-4 py-3 border-2 border-white bg-transparent text-white text-xl rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 max-md:px-3 max-md:py-0"
+          >
             <FaLinkedinIn size={20} className="max-md:h-4 max-md:w-4" />
-          </button>
-          <button className="cursor-pointer px-4 py-3 border-2 border-white bg-transparent text-white text-xl rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 max-md:px-3 max-md:py-0">
+          </Link>
+          <Link
+            href="https://github.com/Christopher-Penticostes"
+            target="_blank"
+            className="flex items-center justify-center cursor-pointer px-4 py-3 border-2 border-white bg-transparent text-white text-xl rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 max-md:px-3 max-md:py-0"
+          >
             <FaGithub size={20} className="max-md:h-4 max-md:w-4" />
-          </button>
-          <button className="cursor-pointer px-4 py-3 border-2 border-white bg-transparent text-white text-xl rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 max-md:px-3 max-md:py-0">
+          </Link>
+          <Link
+            href="mailto:christopherpenticostes890@gmail.com"
+            target="_blank"
+            className="flex items-center justify-center cursor-pointer px-4 py-3 border-2 border-white bg-transparent text-white text-xl rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 max-md:px-3 max-md:py-0"
+          >
             <BiLogoGmail size={20} className="max-md:h-4 max-md:w-4" />
-          </button>
+          </Link>
         </div>
       </div>
       <div className="w-[30%] flex justify-end max-lg:w-full max-lg:justify-center max-lg:my-0">

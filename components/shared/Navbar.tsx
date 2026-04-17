@@ -21,11 +21,11 @@ export function NavbarMain() {
     },
     {
       name: 'Projects',
-      link: '#pricing',
+      link: '/projects',
     },
     {
       name: 'Contact',
-      link: '#contact',
+      link: '/contact',
     },
   ];
 
@@ -37,8 +37,16 @@ export function NavbarMain() {
       <NavBody>
         <NavbarLogo />
         <NavItems items={navItems} />
+
         <div className="flex items-center gap-4">
-          <NavbarButton variant="primary">View CV</NavbarButton>
+          <NavbarButton
+            variant="primary"
+            href="files/Christopher-Penticostes_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View CV
+          </NavbarButton>
         </div>
       </NavBody>
 
@@ -71,6 +79,9 @@ export function NavbarMain() {
               onClick={() => setIsMobileMenuOpen(false)}
               variant="primary"
               className="w-full"
+              href="files/Christopher-Penticostes_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               View CV
             </NavbarButton>
