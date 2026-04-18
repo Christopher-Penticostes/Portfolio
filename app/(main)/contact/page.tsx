@@ -87,23 +87,25 @@ export default function Contact() {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 pt-35 pb-20 max-lg:pt-0">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 pt-35 pb-20 max-lg:pt-30 max-lg:pb-30">
         <div className="mb-8 text-white">
-          <div className="flex gap-4 items-center">
-            <p className="font-semibold text-4xl/14">Connect With Me</p>
+          <div className="flex gap-4 items-center max-md:flex-col-reverse max-md:gap-0 max-md:items-start">
+            <p className="font-semibold text-4xl/14 max-md:text-3xl/12">
+              Connect With Me
+            </p>
             <Badge variant="outline" className="text-white h-5 px-2 ">
               Get in Touch
             </Badge>
           </div>
-          <p className="text-lg max-w-5xl text-gray-300">
+          <p className="text-lg max-w-5xl text-gray-300 max-md:text-[16px]">
             I'm always open to new opportunities where I can contribute, grow,
             and build meaningful things. Whether you have a role in mind or just
             want to connect, feel free to drop me a message — I'd love to hear
             from you!
           </p>
         </div>
-        <div className="flex gap-8">
-          <Card className="dark w-4xl py-6 px-2 border border-input/30">
+        <div className="flex gap-8 max-lg:flex-col-reverse">
+          <Card className="dark w-4xl py-6 px-2 border border-input/30 max-lg:w-full">
             <CardContent>
               <form id="contact" onSubmit={form.handleSubmit(onSubmit)}>
                 <FieldGroup>
@@ -207,7 +209,7 @@ export default function Contact() {
             <Pattern />
             <Badge
               variant="outline"
-              className="text-green-300 border-green-300 bg-green-300/20"
+              className="text-green-300 border-green-300 bg-green-300/20 max-md:mt-8"
             >
               <span className="relative flex size-2 mr-1">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-300 opacity-75" />
@@ -221,25 +223,25 @@ export default function Contact() {
             <p className="font-medium text-lg text-gray-300">
               Full Stack Developer
             </p>
-            <div className="mt-4 flex gap-4">
+            <div className="mt-4 flex gap-4 max-md:mb-3">
               <Link
                 href="https://www.facebook.com/christopher.penticostes"
                 target="_blank"
-                className="flex items-center justify-center cursor-pointer px-3 py-3 border border-white bg-transparent text-white text-xl rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 max-md:px-3 max-md:py-0"
+                className="flex items-center justify-center cursor-pointer px-3 py-3 border border-white bg-transparent text-white text-xl rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 max-md:px-3 max-md:py-3"
               >
                 <FaFacebookF size={15} className="max-md:h-4 max-md:w-4" />
               </Link>
               <Link
                 href="https://www.linkedin.com/in/christopher-penticostes-6ba49634a/"
                 target="_blank"
-                className="flex items-center justify-center cursor-pointer px-3 py-3 border border-white bg-transparent text-white text-xl rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 max-md:px-3 max-md:py-0"
+                className="flex items-center justify-center cursor-pointer px-3 py-3 border border-white bg-transparent text-white text-xl rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 max-md:px-3 max-md:py-3"
               >
                 <FaLinkedinIn size={15} className="max-md:h-4 max-md:w-4" />
               </Link>
               <Link
                 href="https://github.com/Christopher-Penticostes"
                 target="_blank"
-                className="flex items-center justify-center cursor-pointer px-3 py-3 border border-white bg-transparent text-white text-xl rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 max-md:px-3 max-md:py-0"
+                className="flex items-center justify-center cursor-pointer px-3 py-3 border border-white bg-transparent text-white text-xl rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 max-md:px-3 max-md:py-3"
               >
                 <FaGithub size={15} className="max-md:h-4 max-md:w-4" />
               </Link>

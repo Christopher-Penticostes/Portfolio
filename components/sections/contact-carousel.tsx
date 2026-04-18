@@ -45,7 +45,7 @@ export function Pattern() {
       <CarouselContent>
         {images.map((src, index) => (
           <CarouselItem key={index}>
-            <Card className="group/card relative w-full h-82 overflow-hidden border-0 p-0">
+            <Card className="group/card relative w-full h-82 overflow-hidden border-0 p-0 max-lg:h-88 max-md:h-44">
               <Image
                 src={src}
                 alt={`Slide ${index + 1}`}
