@@ -39,7 +39,13 @@ export function Pattern() {
   return (
     <Carousel
       setApi={setApi}
-      plugins={[Autoplay({ delay: 3000 })]}
+      plugins={[
+        Autoplay({
+          delay: 3000,
+          stopOnInteraction: false,
+          stopOnMouseEnter: true,
+        }),
+      ]}
       className="w-full"
     >
       <CarouselContent>

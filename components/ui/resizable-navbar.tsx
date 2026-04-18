@@ -209,7 +209,7 @@ export const MobileNavMenu = ({
           exit={{ opacity: 0 }}
           className={cn(
             'absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg px-4 py-8',
-            'bg-neutral-900 border border-white/10',
+            'bg-[#1F2121] border border-white/10',
             className,
           )}
         >

@@ -9,7 +9,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import { FaFacebookF, FaLinkedinIn, FaGithub } from 'react-icons/fa';
-import { BiLogoGmail } from 'react-icons/bi';
 import {
   Field,
   FieldError,
@@ -65,7 +64,7 @@ export default function Contact() {
 
       toast.success('Message sent successfully!');
       form.reset();
-    } catch (error) {
+    } catch {
       toast.error('Failed to send message. Please try again.');
     }
   }
@@ -98,10 +97,10 @@ export default function Contact() {
             </Badge>
           </div>
           <p className="text-lg max-w-5xl text-gray-300 max-md:text-[16px]">
-            I'm always open to new opportunities where I can contribute, grow,
-            and build meaningful things. Whether you have a role in mind or just
-            want to connect, feel free to drop me a message — I'd love to hear
-            from you!
+            I&apos;m always open to new opportunities where I can contribute,
+            grow, and build meaningful things. Whether you have a role in mind
+            or just want to connect, feel free to drop me a message — I&apos;d
+            love to hear from you!
           </p>
         </div>
         <div className="flex gap-8 max-lg:flex-col-reverse">
