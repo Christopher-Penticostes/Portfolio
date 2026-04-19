@@ -59,7 +59,7 @@ export function Pattern() {
                 className="scale-100 object-cover transition-transform duration-500 ease-in-out group-hover/card:scale-105"
               />
 
-              <div className="absolute inset-x-0 bottom-0 h-full bg-black/20" />
+              <div className="absolute inset-x-0 bottom-0 h-full bg-black/10" />
             </Card>
           </CarouselItem>
         ))}
