@@ -112,13 +112,13 @@ export const AnimatedTestimonials = ({
             exit={{ y: -20, opacity: 0 }}
             transition={{ duration: 0.2, ease: 'easeInOut' }}
           >
-            <h3 className="text-3xl font-bold text-white dark:text-white">
+            <h3 className="text-3xl font-bold text-white dark:text-white max-md:text-2xl">
               {testimonials[active].name}
             </h3>
-            <p className="text-lg font-semibold text-transparent bg-linear-to-b from-neutral-50 to-neutral-400 bg-clip-text">
+            <p className="text-lg font-semibold text-transparent bg-linear-to-b from-neutral-50 to-neutral-400 bg-clip-text max-md:text-md">
               {testimonials[active].designation}
             </p>
-            <motion.p className="mt-8 text-lg text-gray-400 dark:text-neutral-300">
+            <motion.p className="mt-8 text-lg text-gray-400 dark:text-neutral-300 max-md:text-[16px] max-md:mt-4">
               {testimonials[active].quote.split(' ').map((word, index) => (
                 <motion.span
                   key={index}
@@ -136,7 +136,7 @@ export const AnimatedTestimonials = ({
               ))}
             </motion.p>
           </motion.div>
-          <div className="flex gap-4 pt-12 md:pt-12">
+          <div className="flex gap-4 pt-12 md:pt-12 max-md:pt-8">
             <button
               onClick={handlePrev}
               className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
