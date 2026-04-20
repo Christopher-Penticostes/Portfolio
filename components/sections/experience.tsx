@@ -11,14 +11,14 @@ export const projects = [
   {
     title: (
       <div>
-        <p className="text-2xl pt-4">Full Stack Developer</p>
-        <p className="text-xl font-medium text-transparent bg-linear-to-b from-neutral-50 to-neutral-400 bg-clip-text">
+        <p className="text-2xl pt-4 max-md:text-xl">Full Stack Developer</p>
+        <p className="text-xl font-medium text-transparent bg-linear-to-b from-neutral-50 to-neutral-400 bg-clip-text max-md:text-lg">
           AP Creative Advertising Corp.
         </p>
       </div>
     ),
     description: (
-      <ul className="list-disc pl-8 text-lg text-gray-400">
+      <ul className="list-disc pl-8 text-lg text-gray-400 max-md:text-[16px]">
         <li className="mb-4">
           Developed an internal system using Next.js and React.js to support
           more efficient company operations.
@@ -46,14 +46,14 @@ export const projects = [
   {
     title: (
       <div>
-        <p className="text-2xl pt-4">Web Developer Intern</p>
-        <p className="text-xl font-medium text-transparent bg-linear-to-b from-neutral-50 to-neutral-400 bg-clip-text">
+        <p className="text-2xl pt-4 max-md:text-xl">Web Developer Intern</p>
+        <p className="text-xl font-medium text-transparent bg-linear-to-b from-neutral-50 to-neutral-400 bg-clip-text max-md:textlg">
           Wellness PRO Inc.
         </p>
       </div>
     ),
     description: (
-      <ul className="list-disc pl-8 text-lg text-gray-400">
+      <ul className="list-disc pl-8 text-lg text-gray-400 max-md:text-[16px]">
         <li className="mb-4">
           Built a branded WordPress platform using Elementor and WooCommerce for
           a consistent corporate identity.
