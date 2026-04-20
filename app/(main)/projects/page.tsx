@@ -1,5 +1,13 @@
 import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
-import { Store, ChefHat, School } from 'lucide-react';
+import {
+  Store,
+  ChefHat,
+  School,
+  BriefcaseBusiness,
+  Calculator,
+  Gamepad2,
+  Cog,
+} from 'lucide-react';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 
@@ -26,13 +34,12 @@ export default function Project() {
             My Projects
           </p>
           <p className="text-lg max-w-5xl text-gray-300 max-md:text-[16px]">
-            I&apos;m always open to new opportunities where I can contribute,
-            grow, and build meaningful things. Whether you have a role in mind
-            or just want to connect, feel free to drop me a message — I&apos;d
-            love to hear from you!
+            A collection of projects I've built and am currently working on.
+            Some are complete, others are still in progress — all shared here to
+            showcase my work and growth as a developer.
           </p>
         </div>
-        <BentoGrid className="w-full mx-auto grid-cols-2">
+        <BentoGrid className="w-full mx-auto grid-cols-2 max-lg:grid-cols-1">
           {items.map((item, i) => (
             <BentoGridItem
               key={i}
@@ -51,6 +58,56 @@ export default function Project() {
 
 const items = [
   {
+    title: 'Job Application Tracker',
+    description: (
+      <>
+        <p className="text-gray-400">
+          Job Application Tracker is an online tool currently being developed to
+          help job seekers stay organized throughout their job hunt. Users can
+          log applications, track statuses, and monitor their progress all in
+          one place. The platform is still actively being built, with more
+          features continuously being added and improved.
+        </p>
+        <div className="mt-6 flex flex-wrap gap-2 w-full">
+          <Badge className="dark h-5 px-3" variant="next">
+            Next.js
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="react">
+            React
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="prisma">
+            Prisma ORM
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="postgresql">
+            PostgreSQL
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="auth">
+            Better Auth
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="zod">
+            Zod
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="shadcn">
+            Shadcn UI
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="docker">
+            Docker
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="vercel">
+            Vercel
+          </Badge>
+        </div>
+      </>
+    ),
+    header: (
+      <div className="relative flex items-center justify-center gap-2 bg-neutral-600 w-full h-68 rounded-lg overflow-hidden shrink-0 max-lg:h-88 max-md:h-36 ">
+        <Cog className="h-6 w-6 text-white" />
+        <p className="font-bold text-white text-lg">Work in Progress</p>
+      </div>
+    ),
+    icon: <BriefcaseBusiness className="h-4 w-4 text-neutral-500" />,
+  },
+  {
     title:
       'Online Ordering System with Product Image to 3D Viewing and Conversion',
     description: (
@@ -64,19 +121,33 @@ const items = [
           user-friendly design and ensured data security for safe online
           transactions.
         </p>
-        <div className="mt-6 flex gap-2">
-          <Badge className="dark h-5 px-3">HTML</Badge>
-          <Badge className="dark h-5 px-3">CSS</Badge>
-          <Badge className="dark h-5 px-3">JavaScript</Badge>
-          <Badge className="dark h-5 px-3">PHP</Badge>
-          <Badge className="dark h-5 px-3">MySQL</Badge>
-          <Badge className="dark h-5 px-3">SSE</Badge>
-          <Badge className="dark h-5 px-3">LeafletJS</Badge>
+        <div className="mt-6 flex flex-wrap gap-2">
+          <Badge className="dark h-5 px-3" variant="html">
+            HTML
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="css">
+            CSS
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="javascript">
+            JavaScript
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="php">
+            PHP
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="mysql">
+            MySQL
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="sse">
+            SSE
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="leaftlet">
+            LeafletJS
+          </Badge>
         </div>
       </>
     ),
     header: (
-      <div className="relative w-full h-68 rounded-lg overflow-hidden shrink-0">
+      <div className="relative w-full h-68 rounded-lg overflow-hidden shrink-0 max-lg:h-88 max-md:h-36">
         <Image
           src="/images/ordering-system.png"
           loading="lazy"
@@ -100,18 +171,30 @@ const items = [
           experience, ensured mobile responsiveness, and optimized the site for
           performance and security.
         </p>
-        <div className="mt-6 flex gap-2">
-          <Badge className="dark h-5 px-3">HTML</Badge>
-          <Badge className="dark h-5 px-3">CSS</Badge>
-          <Badge className="dark h-5 px-3">JavaScript</Badge>
-          <Badge className="dark h-5 px-3">Wordpress</Badge>
-          <Badge className="dark h-5 px-3">WooCommerce</Badge>
-          <Badge className="dark h-5 px-3">Elementor</Badge>
+        <div className="mt-6 flex flex-wrap gap-2">
+          <Badge className="dark h-5 px-3" variant="html">
+            HTML
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="css">
+            CSS
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="javascript">
+            JavaScript
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="wordpress">
+            Wordpress
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="woocommerce">
+            WooCommerce
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="elementor">
+            Elementor
+          </Badge>
         </div>
       </>
     ),
     header: (
-      <div className="relative w-full h-68 rounded-lg overflow-hidden shrink-0">
+      <div className="relative w-full h-68 rounded-lg overflow-hidden shrink-0 max-lg:h-88 max-md:h-36">
         <Image
           src="/images/wordpress.png"
           loading="lazy"
@@ -135,18 +218,27 @@ const items = [
           for administrators. It also includes features such as order tracking,
           notifications, and secure transaction handling.
         </p>
-        <div className="mt-6 flex gap-2">
-          <Badge className="dark h-5 px-3">HTML</Badge>
-          <Badge className="dark h-5 px-3">CSS</Badge>
-          <Badge className="dark h-5 px-3">JavaScript</Badge>
-          <Badge className="dark h-5 px-3">Wordpress</Badge>
-          <Badge className="dark h-5 px-3">WooCommerce</Badge>
-          <Badge className="dark h-5 px-3">Elementor</Badge>
+        <div className="mt-6 flex flex-wrap gap-2">
+          <Badge className="dark h-5 px-3" variant="html">
+            HTML
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="css">
+            CSS
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="javascript">
+            JavaScript
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="php">
+            PHP
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="mysql">
+            MySQL
+          </Badge>
         </div>
       </>
     ),
     header: (
-      <div className="relative w-full h-68 rounded-lg overflow-hidden shrink-0">
+      <div className="relative w-full h-68 rounded-lg overflow-hidden shrink-0 max-lg:h-88 max-md:h-36">
         <Image
           src="/images/food-ordering.png"
           loading="lazy"
@@ -170,18 +262,27 @@ const items = [
           communication between counselors and learners, and streamline the
           management of counseling services.
         </p>
-        <div className="mt-6 flex gap-2">
-          <Badge className="dark h-5 px-3">HTML</Badge>
-          <Badge className="dark h-5 px-3">CSS</Badge>
-          <Badge className="dark h-5 px-3">JavaScript</Badge>
-          <Badge className="dark h-5 px-3">Wordpress</Badge>
-          <Badge className="dark h-5 px-3">WooCommerce</Badge>
-          <Badge className="dark h-5 px-3">Elementor</Badge>
+        <div className="mt-6 flex flex-wrap gap-2">
+          <Badge className="dark h-5 px-3" variant="html">
+            HTML
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="css">
+            CSS
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="javascript">
+            JavaScript
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="php">
+            PHP
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="mysql">
+            MySQL
+          </Badge>
         </div>
       </>
     ),
     header: (
-      <div className="relative w-full h-68 rounded-lg overflow-hidden shrink-0">
+      <div className="relative w-full h-68 rounded-lg overflow-hidden shrink-0 max-lg:h-88 max-md:h-36">
         <Image
           src="/images/guidance-system.png"
           loading="lazy"
@@ -203,15 +304,21 @@ const items = [
           division. The project also included input validation to handle errors
           like division by zero and invalid entries.
         </p>
-        <div className="mt-6 flex gap-2">
-          <Badge className="dark h-5 px-3">HTML</Badge>
-          <Badge className="dark h-5 px-3">CSS</Badge>
-          <Badge className="dark h-5 px-3">JavaScript</Badge>
+        <div className="mt-6 flex flex-wrap gap-2">
+          <Badge className="dark h-5 px-3" variant="html">
+            HTML
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="css">
+            CSS
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="javascript">
+            JavaScript
+          </Badge>
         </div>
       </>
     ),
     header: (
-      <div className="relative w-full h-68 rounded-lg overflow-hidden shrink-0">
+      <div className="relative w-full h-68 rounded-lg overflow-hidden shrink-0 max-lg:h-88 max-md:h-36">
         <Image
           src="/images/calculator.png"
           loading="lazy"
@@ -221,7 +328,7 @@ const items = [
         />
       </div>
     ),
-    icon: <Store className="h-4 w-4 text-neutral-500" />,
+    icon: <Calculator className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: 'Jack and Poy',
@@ -232,15 +339,21 @@ const items = [
           The game allows players to compete against the computer, with results
           displayed instantly after each round.
         </p>
-        <div className="mt-6 flex gap-2">
-          <Badge className="dark h-5 px-3">HTML</Badge>
-          <Badge className="dark h-5 px-3">CSS</Badge>
-          <Badge className="dark h-5 px-3">JavaScript</Badge>
+        <div className="mt-6 flex flex-wrap gap-2">
+          <Badge className="dark h-5 px-3" variant="html">
+            HTML
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="css">
+            CSS
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="javascript">
+            JavaScript
+          </Badge>
         </div>
       </>
     ),
     header: (
-      <div className="relative w-full h-68 rounded-lg overflow-hidden shrink-0">
+      <div className="relative w-full h-68 rounded-lg overflow-hidden shrink-0 max-lg:h-88 max-md:h-36">
         <Image
           src="/images/jack-poy.png"
           loading="lazy"
@@ -250,7 +363,7 @@ const items = [
         />
       </div>
     ),
-    icon: <Store className="h-4 w-4 text-neutral-500" />,
+    icon: <Gamepad2 className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: 'Guessing Number',
@@ -262,15 +375,21 @@ const items = [
           guess the correct number with feedback provided after each attempt
           (too high, too low, or correct).
         </p>
-        <div className="mt-6 flex gap-2">
-          <Badge className="dark h-5 px-3">HTML</Badge>
-          <Badge className="dark h-5 px-3">CSS</Badge>
-          <Badge className="dark h-5 px-3">JavaScript</Badge>
+        <div className="mt-6 flex flex-wrap gap-2">
+          <Badge className="dark h-5 px-3" variant="html">
+            HTML
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="css">
+            CSS
+          </Badge>
+          <Badge className="dark h-5 px-3" variant="javascript">
+            JavaScript
+          </Badge>
         </div>
       </>
     ),
     header: (
-      <div className="relative w-full h-68 rounded-lg overflow-hidden shrink-0">
+      <div className="relative w-full h-68 rounded-lg overflow-hidden shrink-0 max-lg:h-88 max-md:h-36">
         <Image
           src="/images/guessing-number.png"
           loading="lazy"
@@ -280,6 +399,6 @@ const items = [
         />
       </div>
     ),
-    icon: <Store className="h-4 w-4 text-neutral-500" />,
+    icon: <Gamepad2 className="h-4 w-4 text-neutral-500" />,
   },
 ];
