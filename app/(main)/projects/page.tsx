@@ -34,9 +34,9 @@ export default function Project() {
             My Projects
           </p>
           <p className="text-lg max-w-5xl text-gray-300 max-md:text-[16px]">
-            A collection of projects I've built and am currently working on.
-            Some are complete, others are still in progress — all shared here to
-            showcase my work and growth as a developer.
+            A collection of projects I&apos;ve built and am currently working
+            on. Some are complete, others are still in progress — all shared
+            here to showcase my work and growth as a developer.
           </p>
         </div>
         <BentoGrid className="w-full mx-auto grid-cols-2 max-lg:grid-cols-1">
@@ -165,11 +165,11 @@ const items = [
       <>
         <p className="text-gray-400">
           Built and customized a WordPress website designed to meet the
-          company's requirements. My team and I integrated WooCommerce to handle
-          online ordering transactions, enabling customers to browse products,
-          and place orders. We also customized the design for better user
-          experience, ensured mobile responsiveness, and optimized the site for
-          performance and security.
+          company&apos;s requirements. My team and I integrated WooCommerce to
+          handle online ordering transactions, enabling customers to browse
+          products, and place orders. We also customized the design for better
+          user experience, ensured mobile responsiveness, and optimized the site
+          for performance and security.
         </p>
         <div className="mt-6 flex flex-wrap gap-2">
           <Badge className="dark h-5 px-3" variant="html">
