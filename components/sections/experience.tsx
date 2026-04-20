@@ -47,7 +47,7 @@ export const projects = [
     title: (
       <div>
         <p className="text-2xl pt-4 max-md:text-xl">Web Developer Intern</p>
-        <p className="text-xl font-medium text-transparent bg-linear-to-b from-neutral-50 to-neutral-400 bg-clip-text max-md:textlg">
+        <p className="text-xl font-medium text-transparent bg-linear-to-b from-neutral-50 to-neutral-400 bg-clip-text max-md:text-lg">
           Wellness PRO Inc.
         </p>
       </div>
